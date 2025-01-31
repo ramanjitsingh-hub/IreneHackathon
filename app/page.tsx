@@ -154,27 +154,12 @@ export default function Home() {
     // Fetch all conversations to update the list
     await fetchConversations()
   }
-  const analyzeTone = async (message: string): Promise<string> => {
-    // Implement tone analysis logic (e.g., using an external API)
-    // For now, we'll return a placeholder value
-    return "neutral";
-  };
   
-  const detectProblems = async (message: string): Promise<string[]> => {
-    // Implement problem detection logic (e.g., using an external API)
-    // For now, we'll return a placeholder value
-    return [];
-  };
 
   const handleSendMessage = async (e: React.FormEvent) => {
   e.preventDefault();
   if (!inputMessage.trim()) return;
 
-  // Check for harmful text
-  if (detectHarmfulText(inputMessage)) {
-    setShowAlert(true); // Show alert pop-up
-    await saveFlaggedMessage(userId, inputMessage); // Save flagged message
-  }
 
   const userMessage = { role: "user", content: inputMessage };
   const newMessages = [...messages, userMessage];
@@ -431,7 +416,6 @@ export default function Home() {
       "murder",
     ];
   
-    // Check if the message contains any harmful keywords
     return harmfulKeywords.some((keyword) =>
       message.toLowerCase().includes(keyword)
     );
