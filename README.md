@@ -81,6 +81,11 @@ Let’s break down how Irene works under the hood! 🛠️
 | Database   | Firebase |
 | Hosting    | Vercel (Frontend) |
 
+## Flow Diagram
+
+![WhatsApp Image 2025-01-31 at 10 41 46_ac9b7f7e](https://github.com/user-attachments/assets/3d31fe58-219f-404c-9151-ef71fee5024f)
+
+
 ## How to Run the Project 🚀
 
 ### Clone the Repository:
@@ -110,10 +115,6 @@ OPENAI_API_KEY=your-openai-api-key
 FIREBASE_CONFIG=your-firebase-config
 ```
 
-### Run the Backend:
-```bash
-uvicorn main:app --reload
-```
 
 ### Run the Frontend:
 ```bash
